@@ -69,3 +69,4 @@ Source: http://terokarvinen.com/2012/puppetmaster-on-ubuntu-12-04
 	sudo puppet cert list -all
 	
 	# (MUISTA 2 kertaa sudo puppet agent -tdv) ensimmäisellä kerralla se lähettää sign pyynnön, toinen kerta yhdistää).
+	# Muista myös sudo puppet agent --enable jos ei toimi ekalla kerralla.
