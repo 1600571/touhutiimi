@@ -20,9 +20,7 @@ Source: http://terokarvinen.com/2012/puppetmaster-on-ubuntu-12-04
 	sudo service puppetmaster stop
 	sudo rm -rf /var/lib/puppet/ssl/
 	sudo service puppetmaster start
-	sudo openssl x509 -ni /var/lib/puppet/ssl/certs/nimi -text|grep chengdu
 
-	sudo puppet agent --test --debug --verbose
 	sudo puppet agent --enable
 	sudo puppet agent --test --debug --verbose
 
@@ -44,7 +42,7 @@ Source: http://terokarvinen.com/2012/puppetmaster-on-ubuntu-12-04
 	sudoedit init.pp
 
 	class hellopanda {
-		file {"/tmp/hellopands.txt":
+		file {'/tmp/hellopands.txt':
 			content => "hello panda!\n",
 		}	
 	}
