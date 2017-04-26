@@ -6,6 +6,7 @@ Source: http://terokarvinen.com/2012/puppetmaster-on-ubuntu-12-04
 	ping chengdu
 	sudo service avahi-daemon restart
 	ping chendu.local
+	sudoedit /etc/hosts  <--- vaihta xubuntu nimi chengdu
 
 
 	sudo apt-get -y install puppetmaster
