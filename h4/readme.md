@@ -1,3 +1,5 @@
+Source: http://terokarvinen.com/2012/puppetmaster-on-ubuntu-12-04
+
 # Puppet Master ja Slave
 
 	sudo hostnamectl set-hostname chengdu
