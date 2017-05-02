@@ -68,6 +68,7 @@ Source: http://terokarvinen.com/2012/puppetmaster-on-ubuntu-12-04
 	sudo puppet agent -tdv
 	
 Pitäisi ottaa yhteyden masteriin
+**MASTER ONLY**
 
 	sudo puppet cert list  <-- listaa yhteyden ottaneet koneet
 	sudo puppet help cert <-- antaa ohjeet mitä tehdä 
