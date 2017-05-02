@@ -8,20 +8,23 @@ Source: http://terokarvinen.com/2012/puppetmaster-on-ubuntu-12-04
 	ping chendu.local
 	sudoedit /etc/hosts  <--- vaihta xubuntu nimi chengdu
 
-
+**MASTER ONLY**
+	
 	sudo apt-get -y install puppetmaster
 	sudo service puppetmaster start
 	sudo ls /var/lib/puppet/ssl/certs/
 	sudo openssl x509 -in
 	sudoedit /etc/puppet/puppet.conf
 
-	[master]
+	[master] kohdassa
 	dns_alt_names = chengdu.local
 
 	sudo service puppetmaster stop
 	sudo rm -rf /var/lib/puppet/ssl/
 	sudo service puppetmaster start
 
+**AGENT ONLY**
+	
 	sudo puppet agent --enable
 	sudo puppet agent --test --debug --verbose
 
@@ -33,6 +36,8 @@ Source: http://terokarvinen.com/2012/puppetmaster-on-ubuntu-12-04
 
 	sudo puppet agent -tdv
 
+**MASTER ONLY**
+	
 	cd /etc/puppet/modules
 	ls
 	sudo mkdir hellopanda
@@ -54,18 +59,20 @@ Source: http://terokarvinen.com/2012/puppetmaster-on-ubuntu-12-04
 	/etc/puppet ls  ---> manifests
 
 	cd manifests
-	sudo nano site.pp
+	sudo nano site.pp --> sen sisään laita tämä:
 
 	class {"hellopanda":}
+	
+**AGENT ONLY**
 
 	sudo puppet agent -tdv
-	ls /tmp/hellopanda.txt
-	cat /tmp/hellopanda.txt
+	
+Pitäisi ottaa yhteyden masteriin
 
-	sudo puppet cert list
-	sudo puppet help cert
-	sudo puppet cert sign (koneen nimi)
-	sudo puppet cert list -all
+	sudo puppet cert list  <-- listaa yhteyden ottaneet koneet
+	sudo puppet help cert <-- antaa ohjeet mitä tehdä 
+	sudo puppet cert sign (koneen nimi) <-- antaa certificaten tietylle koneelle 
+	sudo puppet cert list -all <-- listaa kaikki yhteyttä ottaneet ja certifikoidut
 	
 	# (MUISTA 2 kertaa sudo puppet agent -tdv) ensimmäisellä kerralla se lähettää sign pyynnön, toinen kerta yhdistää).
 	# Muista myös sudo puppet agent --enable jos ei toimi ekalla kerralla.
