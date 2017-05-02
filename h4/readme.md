@@ -12,8 +12,6 @@ Source: http://terokarvinen.com/2012/puppetmaster-on-ubuntu-12-04
 	
 	sudo apt-get -y install puppetmaster
 	sudo service puppetmaster start
-	sudo ls /var/lib/puppet/ssl/certs/
-	sudo openssl x509 -in
 	sudoedit /etc/puppet/puppet.conf
 
 	[master] kohdassa
